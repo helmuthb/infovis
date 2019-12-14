@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://d3js.org/d3.v5.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ <script src='metricsgraphics.js'></script>
+ <script src="visualization.js"></script>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="metricsgraphics.css">
+ <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body>
+ <div id="splash" style="text-align:center;">
+  <h1>Information Visualization - San Francisco Bay Water Quality</h1>
+  <h1>Helmuth Breitenfellner, 8725866</h1>
+  <h1>188.308 Information Visualization<h1>
+  <h2>Loading data</h2>
+  <img src="progress-bar2.gif">
+ </div>
+ <div id="content" style="display:none; text-align:center;">
+  <h1>Information Visualization - San Francisco Bay Water Quality</h1>
+  <div id="grid-container">
+   <div id="map-grid">
+    <svg id="map" viewBox="0 0 850 1053" style="max-width:100%;height:auto;">
+     <defs>
+      <pattern id="map-img" patternUnits="userSpaceOnUse" width="850" height="1053">
+       <image xlink:href="SFBay-coordinates.png" x="0" y="0" width="850" height="1053" />
+      </pattern>
+      <pattern id="colorscale" patternUnits="userSpaceOnUse" width="256" height="1">
+       <image xlink:href="TurboScale.png" x="0" y="0" width="256" height="1" />
+      </pattern>
+     </defs>
+     <rect fill="url(#map-img)" x="0" y="0" width="850" height="1053" />
+     <rect fill="url(#colorscale)" x="0" y="1" width="256" height="30" />
+     <text x="8" y="20" fill="white">5</text>
+     <text x="65" y="20" fill="white">10</text>
+     <text x="122" y="20" fill="white">15</text>
+     <text x="179" y="20" fill="white">20</text>
+     <text x="236" y="20" fill="white">25</text>
+    </svg>
+   </div>
+   <div id="timeline-full-grid">
+     <button id="reset-station">Reset Station</button>
+     <div id="legend-full"></div>
+     <div id="timeline-full"></div>
+     <div id="legend-zoom" style="display:none;"></div>
+     <div id="timeline-zoom"></div>
+     <div id="data">
+       <table id="data-table">
+         <tr id="row-Station">
+           <th>Station</th>
+           <td></td>
+         </tr>
+         <tr id="row-Dates">
+           <th>Date Range</th>
+           <td></td>
+         </tr>
+         <tr id="row-Chlorophyll">
+           <th>Chlorophyll</th>
+           <td></td>
+         </tr>
+         <tr id="row-Chlorophyll-Ratio">
+           <th>Active vs. degraded Chlorophyll</th>
+           <td></td>
+         </tr>
+         <tr id="row-Oxygen">
+           <th>Oxygen</th>
+           <td></td>
+         </tr>
+         <tr id="row-Salinity">
+           <th>Salinity</th>
+           <td></td>
+         </tr>
+         <tr id="row-Temperature">
+           <th>Temperature</th>
+           <td></td>
+         </tr>
+       </table>
+     </div>
+   </div>
+  </div>
+ </div>
+</body>
+</html>
